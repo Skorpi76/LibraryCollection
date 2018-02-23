@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<%--Eskender Memetov 300805013 --%>
+<html>
+<head runat="server">
+    <title>Library Collection</title>
+    <link rel="icon" href="img/Library.ico">
+    <!-- --- Head Place Holder ---  -->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!-- --- /Head Place Holder ---  -->
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+            <div class="logo">
+                <a href="index.aspx">&nbsp;&nbsp; Library Colletion</a>
+            </div>
+            <ul id="navigation">
+                <li class="active">
+                    <a href="index.aspx">Home</a>
+                </li>
+                <li>
+                    <a href="Books.aspx">Books</a>
+                </li>
+                <li>
+                    <a href="AddBook.aspx">Add book</a>
+                </li>
+                <li>
+                    <a href="Search.aspx">Search</a>
+                </li>
+                <li>
+                    <a href="Setup.aspx">Setup</a>
+                </li>
+                <li>
+                    <a href="AboutUs.aspx">About Us</a>
+                </li>
+                <li></li>
+                <asp:LoginView ID="LoginView1" runat="server">
+                    <LoggedInTemplate>
+                        Hello <asp:LoginName ID="LoginName1" runat="server" />
+                        
+                        <asp:LoginStatus ID="LoginStatus2" runat="server" LoginText="LOGIN" LogoutText="LOGOUT" />
+                    </LoggedInTemplate>
+                    <AnonymousTemplate>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="LOGIN" LogoutText="LOGOUT" CssClass="login-text" />
+                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="login-text" PostBackUrl="~/Register.aspx">REGISTRATION</asp:LinkButton>
+                    </AnonymousTemplate>
+                </asp:LoginView>
+            </ul>
+        </div>
+        <%--Eskender Memetov 300805013 --%>
+        <div id="contents">
+            <!-- --- Content Place Holder ---  -->
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- --- Content Place Holder ---  -->
+        </div>
+        <div id="footer">
+            <div class="clearfix">
+                <p>© Copyright Eskender Memetov 2017 | Version 0.3 &nbsp;</p>
+            </div>
+        </div>
+
+
+    </form>
+</body>
+</html>
+<%--Eskender Memetov 300805013 --%>
